@@ -1,0 +1,72 @@
+.container {
+  width: 100%;
+  min-height: 70px;
+
+  background-color: var(--gray-500);
+  color: #fff;
+
+  margin-top: 15px;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.containerline {
+  composes: container;
+  text-decoration: line-through;
+  color: var(--gray-300);
+}
+
+.buttonCheck {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  color: var(--blue);
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.buttonCheck:hover {
+  /* color: var(--blueDark); */
+
+  background-color: var(--blue);
+  filter: brightness(0.9);
+}
+button {
+  background: transparent;
+  border: none;
+}
+.buttonChecked {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--purpleDark);
+  background-color: transparent;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.buttonChecked:hover {
+  color: var(--purple);
+}
+p {
+  margin-left: 10px;
+}
+.trash {
+  color: var(--danger);
+  margin-left: auto;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: transparent;
+}
+.trash:hover {
+  background-color: var(--gray-400);
+}
