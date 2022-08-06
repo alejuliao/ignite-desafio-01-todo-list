@@ -10,15 +10,16 @@ function App() {
   const [tasks, setTasks] = useState<TaskType[]>([
     {
       id: 23123123,
-      content: "texto de tarefa 1",
+      content: "Estudar",
       done: false,
     },
     {
       id: 2315312,
-      content: "segundo texto de tarefa 2",
+      content: "Trabalhar",
       done: true,
     },
   ]);
+
   function handleAddTask(taskContent: string) {
     if (taskContent === "") return;
     const id = Math.random() * 100;
@@ -27,7 +28,9 @@ function App() {
       content: taskContent,
       done: false,
     };
-    setTasks([...tasks, newTask]);
+    setTasks(
+      [...tasks, newTask].sort((x, y) => Number(x.done) - Number(y.done))
+    );
   }
   function handleTaskChange(id: number) {
     const newTasks = tasks.map((task: TaskType) => {
@@ -36,7 +39,7 @@ function App() {
       }
       return task;
     });
-    setTasks(newTasks);
+    setTasks(newTasks.sort((x, y) => Number(x.done) - Number(y.done)));
   }
   function handleTaskDelete(id: number) {
     const newTasks = tasks.filter((task) => task.id !== id);
@@ -55,8 +58,15 @@ function App() {
         <InputTask onCreateTask={handleAddTask} />
         <div className={styles.taskList}>
           <div className={styles.status}>
-            <div>Tarefas criadas {tasks.length}</div>
-            <div>Concluídas{tasks.filter((task) => task.done).length}</div>
+            <div>
+              Tarefas criadas <span>{tasks.length}</span>
+            </div>
+            <div>
+              Concluídas
+              <span>
+                {tasks.filter((task) => task.done).length} de {tasks.length}
+              </span>
+            </div>
           </div>
           {tasks.length > 0 ? (
             tasks.map((task) => (

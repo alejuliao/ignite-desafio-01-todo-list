@@ -24,12 +24,21 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  font-size: 14px;
 }
 .status div:first-child {
   color: var(--blue);
 }
 .status div:last-child {
   color: var(--purple);
+}
+.status span {
+  font-size: 12px;
+  color: #fff;
+  margin-left: 4px;
+  background-color: var(--gray-400);
+  padding: 2px 8px;
+  border-radius: 999px;
 }
 .taskList {
   margin-top: 40px;
@@ -38,18 +47,19 @@
   display: flex;
   align-items: center;
   justify-content: center;
-
   height: 180px;
   width: 100%;
   margin: auto;
   background-color: var(--gray-700);
 }
 .header > h1:nth-child(2) {
+  font-size: 40px;
   color: var(--blue);
   margin: 0 3px 0 10px;
   font-weight: bold;
 }
 .header > h1:last-child {
+  font-size: 40px;
   color: var(--purple);
   font-weight: bold;
 }

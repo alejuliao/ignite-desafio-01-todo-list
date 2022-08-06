@@ -3,6 +3,7 @@
   --purpleDark: #5e60ce;
   --blue: #4ea8de;
   --blueDark: #1e6f9f;
+  --blueDarkOpacity: #1e6f9f20;
   --gray-100: #f2f2f2;
   --gray-200: #d9d9d9;
   --gray-300: #808080;
@@ -21,6 +22,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Inter", sans-serif;
+  line-height: 1.4rem;
 }
 body {
   background: var(--gray-900);
@@ -31,7 +33,7 @@ body,
 input,
 textarea,
 button {
-  font-family: "Roboto", sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 400;
   font-size: 1rem;
   color: var(--white);
